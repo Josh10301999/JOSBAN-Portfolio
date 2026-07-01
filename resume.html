@@ -1,202 +1,1595 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOSBAN - Resume</title>
-    <link rel="icon" type="image/png" href="Cheetah logo.png" sizes="32x32">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .experience-item h3, .education-item h3, .skill-category h3 {
-            color: #e0745d;
-        }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Joshua Bañacia | Resume</title>
+
+<link rel="icon" type="image/png" href="Cheetah logo.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+body{
+
+background:#0e1117;
+color:white;
+font-family:'Poppins',sans-serif;
+
+}
+
+.resume-container{
+
+margin-top:120px;
+margin-bottom:100px;
+
+}
+
+.resume-card{
+
+background:#161b22;
+
+border-radius:24px;
+
+padding:60px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.35);
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.hero{
+
+text-align:center;
+margin-bottom:70px;
+
+}
+
+.hero img{
+
+width:140px;
+height:140px;
+border-radius:50%;
+border:4px solid #ff7a59;
+object-fit:cover;
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+font-weight:700;
+
+}
+
+.hero h2{
+
+font-size:1.2rem;
+font-weight:500;
+color:#ff7a59;
+
+margin-top:10px;
+
+}
+
+.hero-info{
+
+margin-top:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+font-size:.95rem;
+
+color:#c8c8c8;
+
+}
+
+.hero-info span{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+}
+
+.summary-card{
+
+margin-top:50px;
+
+background:#11161d;
+
+padding:35px;
+
+border-radius:20px;
+
+border-left:5px solid #ff7a59;
+
+}
+
+.summary-card h3{
+
+color:#ff7a59;
+
+margin-bottom:20px;
+
+font-size:1.4rem;
+
+}
+
+.summary-card p{
+
+line-height:1.9;
+
+font-size:1rem;
+
+color:#d5d5d5;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+font-weight:700;
+
+margin-bottom:40px;
+
+position:relative;
+
+}
+
+.section-title::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-12px;
+
+width:70px;
+
+height:4px;
+
+background:#ff7a59;
+
+border-radius:10px;
+
+}
+
+<!-- Part 2 css -->
+
+.experience-timeline{
+
+position:relative;
+
+padding-left:35px;
+
+margin-top:40px;
+
+border-left:2px solid rgba(255,122,89,.25);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+margin-bottom:55px;
+
+}
+
+.timeline-dot{
+
+position:absolute;
+
+left:-44px;
+
+top:10px;
+
+width:18px;
+
+height:18px;
+
+background:#ff7a59;
+
+border-radius:50%;
+
+box-shadow:0 0 18px rgba(255,122,89,.6);
+
+}
+
+.timeline-content{
+
+background:#11161d;
+
+padding:28px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.35s;
+
+}
+
+.timeline-content:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.timeline-date{
+
+display:inline-block;
+
+margin-bottom:10px;
+
+font-size:.9rem;
+
+font-weight:600;
+
+color:#ff7a59;
+
+}
+
+.timeline-content h3{
+
+font-size:1.45rem;
+
+margin-bottom:6px;
+
+font-weight:700;
+
+}
+
+.timeline-content h4{
+
+font-size:1rem;
+
+margin-bottom:18px;
+
+color:#9aa4b2;
+
+}
+
+.timeline-content ul{
+
+padding-left:20px;
+
+}
+
+.timeline-content li{
+
+margin-bottom:12px;
+
+line-height:1.8;
+
+color:#d3d3d3;
+
+}
+
+<!-- Part 3 css -->
+
+/* ================================= */
+
+.skills-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.skill-card{
+
+background:#11161d;
+
+padding:30px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.35s;
+
+height:100%;
+
+}
+
+.skill-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.35);
+
+border-color:#ff7a59;
+
+}
+
+.skill-icon{
+
+font-size:2rem;
+
+margin-bottom:15px;
+
+}
+
+.skill-card h3{
+
+font-size:1.2rem;
+
+margin-bottom:15px;
+
+color:#ffffff;
+
+}
+
+.skill-card p{
+
+line-height:1.7;
+
+color:#cfcfcf;
+
+font-size:.95rem;
+
+}
+
+/* ================================= */
+
+.tools-grid{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-top:40px;
+
+}
+
+.tools-grid span{
+
+padding:12px 20px;
+
+border-radius:50px;
+
+background:#11161d;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.3s;
+
+font-size:.92rem;
+
+}
+
+.tools-grid span:hover{
+
+background:#ff7a59;
+
+transform:translateY(-3px);
+
+cursor:default;
+
+}
+
+<!-- Part 4 css -->
+
+/* =============================== */
+
+.certifications-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.certificate-card{
+
+background:#11161d;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.35s;
+
+}
+
+.certificate-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#ff7a59;
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.certificate-icon{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+}
+
+.certificate-card h3{
+
+font-size:1.15rem;
+
+margin-bottom:10px;
+
+}
+
+.certificate-card p{
+
+color:#bbbbbb;
+
+}
+
+.certificate-card span{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:6px 16px;
+
+background:#ff7a59;
+
+border-radius:40px;
+
+font-size:.85rem;
+
+font-weight:600;
+
+}
+
+/* =============================== */
+
+.education-card{
+
+background:#11161d;
+
+padding:35px;
+
+border-radius:20px;
+
+margin-top:35px;
+
+}
+
+.education-card h3{
+
+font-size:1.5rem;
+
+margin-bottom:10px;
+
+}
+
+.education-card h4{
+
+color:#ff7a59;
+
+margin-bottom:15px;
+
+}
+
+.education-extra{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+/* =============================== */
+
+.language-card{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:35px;
+
+}
+
+.language-card div{
+
+background:#11161d;
+
+padding:16px 30px;
+
+border-radius:50px;
+
+}
+
+/* =============================== */
+
+.reference-card{
+
+margin-top:30px;
+
+background:#11161d;
+
+padding:35px;
+
+border-radius:18px;
+
+font-size:1.05rem;
+
+color:#cccccc;
+
+}
+
+
+<!-- Part 5 css -->
+
+/* =============================== */
+
+.resume-footer{
+
+margin-top:100px;
+
+padding:60px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-content h2{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.footer-content p{
+
+color:#bdbdbd;
+
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin:30px 0;
+
+}
+
+.footer-links a{
+
+padding:12px 24px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+background:#11161d;
+
+color:white;
+
+transition:.3s;
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.footer-links a:hover{
+
+background:#ff7a59;
+
+transform:translateY(-4px);
+
+}
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .7s ease;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* =============================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:2rem;
+
+}
+
+.hero h2{
+
+font-size:1rem;
+
+}
+
+.resume-card{
+
+padding:30px;
+
+}
+
+.timeline-content{
+
+padding:20px;
+
+}
+
+.section-title{
+
+font-size:1.6rem;
+
+}
+
+.hero-info{
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.certifications-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.education-extra{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-links{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+
+.resume-section{
+    margin-bottom:70px;
+}
+
+.language-card{
+    margin-top:30px;
+    margin-bottom:70px;
+}
+
+.resume-footer{
+    margin-top:100px;
+}
+
+
+.footer-content h2,
+.footer-content p,
+.copyright {
+
+    text-align: center;
+    width: 100%;
+
+}
+
+
+</style>
+
 </head>
+
 <body>
-    <!-- Vertical Progress Bar -->
-    <div class="vertical-progress">
-        <div class="vertical-progress-bar"></div>
+
+<div id="motion-bg"
+style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;">
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center"
+href="index.html">
+
+<img src="Cheetah logo.png"
+
+style="width:45px;height:45px;border-radius:50%;margin-right:12px;">
+
+<strong>JOSBAN</strong>
+
+</a>
+
+<button class="navbar-toggler"
+
+type="button"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse"
+
+id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="index.html#about">
+
+About
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="index.html#skills">
+
+Skills
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="index.html#projects">
+
+Projects
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link"
+
+href="index.html#contact">
+
+Contact
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link active"
+
+href="resume.html">
+
+Resume
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container resume-container">
+
+<div class="resume-card">
+
+<div class="hero">
+
+<img src="myprofile.jpg" alt="Joshua">
+
+<h1>
+
+Joshua Ajon Bañacia
+
+</h1>
+
+<h2>
+
+Senior Video Editor • Virtual Assistant • Multimedia Specialist
+
+</h2>
+
+<div class="hero-info">
+
+<span>
+
+📍 Cebu City, Philippines
+
+</span>
+
+<span>
+
+📧 josbancorpmedia@gmail.com
+
+</span>
+
+<span>
+
+📱 +63 993 563 0924
+
+</span>
+
+</div>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Professional Summary
+
+</h3>
+
+<p>
+
+Creative and detail-oriented Virtual Assistant and Multimedia Specialist with over <strong>5 years of experience</strong> supporting US-based clients, online business coaches, real estate professionals, and digital entrepreneurs.
+
+I specialize in video editing, graphic design, TikTok and Instagram content creation, automation workflows, executive assistance, and social media management.
+
+Throughout my career, I've helped businesses streamline operations using GoHighLevel, Zapier, Stripe, Notion, Slack, and Google Workspace while producing engaging content that increases reach, strengthens brand identity, and drives business growth.
+
+My goal is simple—deliver high-quality creative work while helping businesses save time, improve efficiency, and scale confidently.
+
+</p>
+
+</div>
+
+<br><br>
+
+<h2 class="section-title">
+
+Professional Experience
+
+</h2>
+
+<div class="experience-timeline">
+
+    <!-- IONOS -->
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span class="timeline-date">
+                September 2025 – May 2026
+            </span>
+
+            <h3>
+                Specialist, Advertising Content Design
+            </h3>
+
+            <h4>
+                IONOS Philippines Inc.
+            </h4>
+
+            <ul>
+
+                <li>
+                    Produced high-performing short-form video advertisements for Facebook and other digital platforms.
+                </li>
+
+                <li>
+                    Collaborated with creative and marketing teams to align every video with campaign objectives.
+                </li>
+
+                <li>
+                    Optimized video pacing, storytelling, and engagement within 10–15 second ad formats.
+                </li>
+
+                <li>
+                    Ensured every creative complied with advertising policies and platform requirements.
+                </li>
+
+                <li>
+                    Managed multiple creative projects while consistently meeting tight deadlines.
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
 
-    <!-- Motion background container -->
-    <div id="motion-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
 
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <div class="brand-container">
-                    <img src="Cheetah logo.png" alt="Moon Raven Logo" class="navbar-brand-image" style="border-radius: 50%; object-fit: cover;">
-                    <span class="brand-text">JOSBAN</span>
-                </div>
+
+    <!-- SELF EMPLOYED -->
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span class="timeline-date">
+                2023 – 2025
+            </span>
+
+            <h3>
+                Virtual Assistant & Multimedia Specialist
+            </h3>
+
+            <h4>
+                Self-Employed • Remote
+            </h4>
+
+            <ul>
+
+                <li>
+                    Supported a California-based online business coach with daily executive assistance and creative operations.
+                </li>
+
+                <li>
+                    Edited TikTok and Instagram Reels that improved engagement and audience retention.
+                </li>
+
+                <li>
+                    Designed graphics and presentation decks for marketing campaigns and coaching programs.
+                </li>
+
+                <li>
+                    Built business automations using GoHighLevel, Zapier, Stripe, Slack, Notion, and Google Calendar.
+                </li>
+
+                <li>
+                    Managed CRM systems, scheduling, client communication, and administrative workflows.
+                </li>
+
+                <li>
+                    Assisted California real estate professionals with listing videos, presentations, and livestream support.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MARKETSCALE -->
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span class="timeline-date">
+                2022
+            </span>
+
+            <h3>
+                Podcast Editor
+            </h3>
+
+            <h4>
+                MarketScale • Texas, USA
+            </h4>
+
+            <ul>
+
+                <li>
+                    Edited professional podcast episodes for US-based B2B clients.
+                </li>
+
+                <li>
+                    Improved audio quality through mastering, cleanup, and sound enhancement.
+                </li>
+
+                <li>
+                    Produced promotional soundbites for social media marketing.
+                </li>
+
+                <li>
+                    Delivered polished content while maintaining consistent brand standards.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FREELANCE -->
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span class="timeline-date">
+                2020
+            </span>
+
+            <h3>
+                Video Editor & Virtual Assistant
+            </h3>
+
+            <h4>
+                Freelance • Remote
+            </h4>
+
+            <ul>
+
+                <li>
+                    Produced engaging real estate listing videos and promotional content.
+                </li>
+
+                <li>
+                    Created PowerPoint presentations and event materials for property showcases.
+                </li>
+
+                <li>
+                    Assisted with virtual and on-site real estate events in Batangas.
+                </li>
+
+                <li>
+                    Worked directly with clients to deliver projects on schedule and within brand guidelines.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- CORE COMPETENCIES -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+    <h2 class="section-title">
+        Core Competencies
+    </h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🎬</div>
+
+            <h3>Video Editing</h3>
+
+            <p>
+
+                Adobe Premiere Pro, After Effects,
+                DaVinci Resolve, CapCut
+
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🎨</div>
+
+            <h3>Graphic Design</h3>
+
+            <p>
+
+                Adobe Photoshop,
+                Illustrator,
+                Canva
+
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📱</div>
+
+            <h3>Social Media</h3>
+
+            <p>
+
+                TikTok,
+                Instagram Reels,
+                Facebook Content,
+                Content Strategy
+
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <div class="skill-icon">🤖</div>
+
+            <h3>Automation</h3>
+
+            <p>
+
+                GoHighLevel,
+                Zapier,
+                Stripe,
+                Notion,
+                Slack
+
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📋</div>
+
+            <h3>Virtual Assistance</h3>
+
+            <p>
+
+                Executive Assistance,
+                CRM,
+                Scheduling,
+                Email Management,
+                Client Support
+
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <div class="skill-icon">📊</div>
+
+            <h3>Presentation Design</h3>
+
+            <p>
+
+                PowerPoint,
+                Google Slides,
+                Marketing Decks
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================================= -->
+<!-- TOOLS -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+<h2 class="section-title">
+
+Tools & Platforms
+
+</h2>
+
+<div class="tools-grid">
+
+<span>Adobe Premiere Pro</span>
+
+<span>After Effects</span>
+
+<span>Photoshop</span>
+
+<span>Illustrator</span>
+
+<span>DaVinci Resolve</span>
+
+<span>Canva</span>
+
+<span>CapCut</span>
+
+<span>GoHighLevel</span>
+
+<span>Zapier</span>
+
+<span>Notion</span>
+
+<span>Stripe</span>
+
+<span>Slack</span>
+
+<span>Google Workspace</span>
+
+<span>Microsoft Office</span>
+
+<span>Zoom</span>
+
+</div>
+
+</section>
+
+
+<!-- ========================================= -->
+<!-- CERTIFICATIONS -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+    <h2 class="section-title">
+        Certifications
+    </h2>
+
+    <div class="certifications-grid">
+
+        <div class="certificate-card">
+
+            <div class="certificate-icon">
+                🏆
+            </div>
+
+            <h3>
+                Social Media Marketing Fundamentals
+            </h3>
+
+            <p>
+                HubSpot Academy
+            </p>
+
+            <span>
+                2022
+            </span>
+
+        </div>
+
+        <div class="certificate-card">
+
+            <div class="certificate-icon">
+                🎖️
+            </div>
+
+            <h3>
+                Certified Virtual Assistant
+            </h3>
+
+            <p>
+                Filipino Virtual Assistance Academy
+            </p>
+
+            <span>
+                2021
+            </span>
+
+        </div>
+
+        <div class="certificate-card">
+
+            <div class="certificate-icon">
+                🎬
+            </div>
+
+            <h3>
+                Adobe Premiere Pro Video Editing
+            </h3>
+
+            <p>
+                Coursera
+            </p>
+
+            <span>
+                2020
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================================= -->
+<!-- EDUCATION -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+    <h2 class="section-title">
+        Education
+    </h2>
+
+    <div class="education-card">
+
+        <h3>
+
+            Bachelor of Science in Information Technology
+
+        </h3>
+
+        <h4>
+
+            Northwest Samar State University
+
+        </h4>
+
+        <span>
+
+            Graduated • 2022
+
+        </span>
+
+        <hr>
+
+        <div class="education-extra">
+
+            <div>
+
+                <strong>Senior High School</strong>
+
+                <p>Graduated • 2018</p>
+
+                <small>Leadership Award</small>
+
+            </div>
+
+            <div>
+
+                <strong>High School</strong>
+
+                <p>Graduated • 2016</p>
+
+                <small>Athlete of the Year</small>
+
+            </div>
+
+            <div>
+
+                <strong>Elementary</strong>
+
+                <p>Graduated • 2012</p>
+
+                <small>
+                    Athlete of the Year • Leadership Award
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ========================================= -->
+<!-- LANGUAGES -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+<h2 class="section-title">
+
+Languages
+
+</h2>
+
+<div class="language-card">
+
+<div>
+
+🇵🇭 Filipino
+
+</div>
+
+<div>
+
+🇺🇸 English
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ========================================= -->
+<!-- REFERENCES -->
+<!-- ========================================= -->
+
+<section class="resume-section">
+
+<h2 class="section-title">
+
+References
+
+</h2>
+
+<div class="reference-card">
+
+<p>
+
+Professional references are available upon request.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer class="resume-footer">
+
+    <div class="footer-content">
+
+        <h2>
+            Joshua Ajon Bañacia
+        </h2>
+
+        <p>
+            Senior Video Editor • Virtual Assistant • Multimedia Specialist
+        </p>
+
+        <div class="footer-links">
+
+            <a href="mailto:josbancorpmedia@gmail.com">
+                📧 Email
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="resume.html">Resume</a>
-                    </li>
-                </ul>
-            </div>
+
+            <a href="https://josbanportfolio.netlify.app"
+               target="_blank">
+
+                🌐 Portfolio
+
+            </a>
+
         </div>
-    </nav>
 
-    <!-- Resume Content -->
-    <div class="container resume-container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <!-- Summary Section -->
-                <section class="resume-section">
-                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#summaryContent" aria-expanded="true">
-                        <h1 class="section-title">Joshua Ajon Bañacia</h1>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="collapse show" id="summaryContent">
-                        <p class="resume-text">
-                            Creative and detail-oriented Video Editor with expertise in long-form video essays, short-form content, and cinematic storytelling. Skilled in motion graphics, AI-enhanced visuals, and audience engagement strategies, with a track record of helping creators grow their digital presence. Proficient in Adobe Premiere Pro, DaVinci Resolve, and After Effects. Passionate about storytelling, AI advancements, and content optimization for digital platforms.
-                        </p>
-                    </div>
-                </section>
+        <p class="copyright">
 
-                <!-- Work Experience -->
-                <section class="resume-section">
-                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#experienceContent" aria-expanded="true">
-                        <h2 class="section-title">💼 Work Experience</h2>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="collapse show" id="experienceContent">
-                        <div class="experience-item">
-                            <h3>🎞️ Video Editor - WeddingFilms</h3>
-                            <p class="date">March 2018 - June 2020</p>
-                            <ul class="achievement-list">
-                                <li>✅ Created stunning wedding videos by transforming raw
-footage into polished films that captured each couple's
-unique story. Focused on client vision, seamless editing, color
-grading, and sound design to deliver timeless, high-quality
-results.</li>
-                               
-                            </ul>
-                        </div>
+            © 2026 Joshua Ajon Bañacia.
+            Designed & Developed by Joshua.
 
-                        <div class="experience-item">
-                            <h3>🎥 Video & Audio Podcast Editor - MarketScale</h3>
-                            <p class="date">September 2020- February 2022</p>
-                            <ul class="achievement-list">
-                                <li>✅ Edited and produced high-quality podcast episodes, including
-custom premium borders to enhance branding. Focused on
-seamless video and audio edits, dynamic sound design, and
-incorporating motion graphics, intros, and outros. Delivered
-polished, engaging content on schedule while ensuring brand
-consistency and effective communication of client messages.</li>
-                                
-                            </ul>
-                        </div>
+        </p>
 
-                       
-					    <div class="experience-item">
-                            <h3>🎬 Tiktok & Instagram Reels Editor - Upwork</h3>
-                            <p class="date">February 2021 - December 2022</p>
-                            <ul class="achievement-list">
-                                <li>✅ I created fun and engaging short-form video content for
-TikTok and Instagram Reels, using dynamic transitions, trending
-effects, and creative storytelling to capture attention. I
-worked closely with clients to ensure each video matched
-their brand’s style and social media goals. My focus was on
-delivering high-quality, visually appealing videos that helped
-grow their audience and increase engagement.</li>
-                                
-                            </ul>
-                        </div>
-					   
-					   
-					    <div class="experience-item">
-                            <h3>💻 Virtual Assistant - OnlineBusiness Coach</h3>
-                            <p class="date">September 2021 - December 2024</p>
-                            <ul class="achievement-list">
-                                <li>✅ Managed social media, scheduled appointments, and handled
-data entry to reduce the client’s workload. Edited videos,
-designed graphics, and organized meetings to ensure smooth
-operations. Helped the client achieve their goals by
-increasing monthly revenue from $30k to $50k and growing
-their TikTok followers from 17k to 31k. Focused on streamlining
-tasks to give the client more time to spend with their family
-while driving business growth.</li>
-                                
-                            </ul>
-                        </div>
-					   
-                    </div>
-                </section>
-
-                <!-- Technical Skills -->
-                <section class="resume-section">
-                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#skillsContent" aria-expanded="true">
-                        <h2 class="section-title">🎨 Technical Skills</h2>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="collapse show" id="skillsContent">
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1200px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro Icon" style="height: 1em; width: auto; vertical-align: middle;"> Editing Software</h3>
-                                <p>Adobe Premiere Pro, DaVinci Resolve, After Effects, Capcut, Adobe Photoshop </p>
-                            </div>
-                            <div class="skill-category">
-                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/2101px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects Icon" style="height: 1em; width: auto; vertical-align: middle;"> Motion Graphics & VFX</h3>
-                                <p>After Effects, Typography, AI-powered automation</p>
-                            </div>
-                            <div class="skill-category">
-                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Audacity_Logo.svg/1200px-Audacity_Logo.svg.png" alt="Audacity Icon" style="height: 1em; width: auto; vertical-align: middle;"> Audio & Music</h3>
-                                <p>Adobe Audition, Audacity, AI-generated SFX, sound design, voice enhancement</p>
-                            </div>
-                            <div class="skill-category">
-                                <h3><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png" alt="DaVinci Resolve Icon" style="height: 1em; width: auto; vertical-align: middle;"> Color Grading</h3>
-                                <p>DaVinci Resolve for cinematic visuals</p>
-                            </div>
-                            <div class="skill-category">
-                                <h3><img src="https://cdn.iconscout.com/icon/free/png-256/free-youtube-logo-icon-download-in-svg-png-gif-file-formats--social-media-70-flat-icons-color-pack-logos-432560.png" alt="YouTube Icon" style="height: 1em; width: auto; vertical-align: middle;"> Content Optimization</h3>
-                                <p>YouTube SEO, audience retention strategies</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Additional Skills -->
-                <section class="resume-section">
-                    <div class="section-header" data-bs-toggle="collapse" data-bs-target="#additionalSkillsContent" aria-expanded="true">
-                        <h2 class="section-title">🔥 Additional Skills</h2>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="collapse show" id="additionalSkillsContent">
-                        <div class="additional-skills">
-                            <p><strong>📷 Photography:</strong> Digital, Wildlife, Sports, Event</p>
-                            <p><strong>💻 Software:</strong> Microsoft Office (Word, Excel), Linux, Windows</p>
-                            <p><strong>🌍 Languages:</strong> English (Fluent)</p>
-                            <p><strong>🕰️ Soft Skills:</strong> Communication, Research, Time Management</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll(".timeline-item,.skill-card,.certificate-card,.education-card,.summary-card,.reference-card").forEach(card=>{
+
+card.classList.add("hidden");
+
+observer.observe(card);
+
+});
+
+</script>
+
 </body>
-</html> 
+
+</html>
